@@ -1,0 +1,33 @@
+{%load crispy_forms_tags%}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <title>Register</title>
+</head>
+<body>
+<div class="container">
+    <div class="top-space"></div>
+    <span id="menu-toggle"><i class="fas fa-bars fa-lg"></i></span>
+    <span style="font-weight: bold; font-size:20px;"><a href="{% url 'home'%}"
+                                                        style="color: black; text-decoration: none;">Notes</a></span>
+    <hr>
+        <form action="" method="post">
+            {%csrf_token%}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary btn-block btn-sm">Register</button>
+        </form>
+        <br>
+        <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
+</div>
+</body>
+<style>
+    .top-space{
+    padding-top:10px;
+    }
+</style>
+</html>
+

@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <title>{{notes.title}}</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="{% url 'home' %}">< Notes</a>
+    </div>
+    <hr>
+    <h3>{{notes.title}} <a href="{% url 'edit_note' notes.id%}"><i class="fas fa-edit fa-xs"></i></a>
+        <a href="{% url 'delete_note' notes.pk%}"><i class="far fa-trash-alt fa-xs"></i></a></h3>
+
+    <hr>
+    <p>{{notes.note|safe}}</p>
+
+</div>
+<style>
+
+    body{
+    background-image: url("{%static 'images/paper_bg_2.jpg'%}");
+    }
+
+    .container{
+    padding-bottom: 5px;
+    }
+
+    .header{
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+
+    }
+
+    a{
+    color: lightgrey;
+    }
+
+    a:hover {
+    text-decoration: none;
+    }
+
+    a:hover{
+    color: lightgrey;
+    }
+
+
+
+</style>
+</body>
+</html>

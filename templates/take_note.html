@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Add new note</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="{% url 'home' %}">< Notes</a>
+    </div>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button class="btn btn-warning btn-sm">Add Note</button>
+    </form>
+</div>
+<br>
+</body>
+<style>
+    .tox-notifications-container{
+    display: none !important;
+    }
+
+    body{
+    background-image: url("{%static 'images/paper_bg_2.jpg'%}");
+    }
+
+    .header{
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+    }
+
+    a{
+    color: lightgrey;
+    }
+
+    a:hover {
+    text-decoration: none;
+    }
+
+    a:hover{
+    color: lightgrey;
+    }
+
+
+</style>
+</html>
