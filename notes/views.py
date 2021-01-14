@@ -3,12 +3,6 @@ from .models import Note, Profile
 from .forms import NotesForm, RegisterForm
 
 
-def temp(request):
-    profile1 = Profile.objects.get_or_create(name="priya")
-    #profile = Profile.objects.all()
-    return render(request, 'temp.html', {'profile1': profile1})
-
-
 def index(request):
     if request.user.is_active:
         notes = Note.objects.filter(user=request.user, archive=False).order_by('-pinned')
